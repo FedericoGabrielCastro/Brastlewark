@@ -15,8 +15,8 @@ const SliderAllGnomes = () => {
     // load all api when start the component
     useEffect(() => {
         dispatch(fetchGnomes())
-    }, [dispatch])        
-       
+    }, [dispatch])
+
     const [current, setCurrent] = useState(0)
     const length = getAllGnomes.length
 
@@ -28,39 +28,44 @@ const SliderAllGnomes = () => {
         setCurrent(current === 0 ? length -1 : current - 1)
     }
 
-    console.log(current)
-
     return (
-        <div className={classes.card}>
+        <section className={classes.sliderContent}>
             <div className={classes.box}>
-                <section className={classes.slider}>
-                <FaArrowAltCircleLeft className={classes.leftArrow} onClick={prevSlide}/>
-                <FaArrowAltCircleRight className={classes.rightArrow} onClick={nextSlide}/>
-                    {
-                        getAllGnomes.map((item, index) => (
-                            <div className={index === current ? (classes.slideActive) : (classes.slide) } key={index}>
-                                {index === current && (
-                                    <div className={classes.contentInfoCard}>
-                                        <h1 className={classes.titleName}>{item.name}</h1>
-                                        <table>
-                                            <tr><td>Age</td><td>{item.age}</td></tr>
-                                            <tr><td>weight</td><td>{item.weight}</td></tr>
-                                            <tr><td>height</td><td>{item.height}</td></tr>
-                                        </table>
-                                        {/* <p>No sabemos su genero pero su color de pelo es {item.hair_color}</p> */}
-                                        <img key={item.id} src={item.thumbnail} alt={item.name} className={classes.imageGnome}/>
-                                        {/* <table>
-                                            <tr><td>Profesiones</td><td>{item.professions}</td></tr>
-                                            <tr><td>Amigos</td><td>{item.friends}</td></tr>
-                                        </table> */}
-                                    </div>
-                                )}
+                {
+                    getAllGnomes.map((item, index) => (
+                        <div className={index === current ? (classes.slideActive) : (classes.slide) } key={index}>
+                        {index === current && (
+                            <div>
+                            <section className={classes.contentInfoCard}>
+                                <img key={item.id} src={item.thumbnail} alt={item.name} className={classes.imageGnome}/>
+                                <h1 className={classes.titleName}>{item.name}</h1>
+                                <table>
+                                    <tr><td>Hair</td><td>{item.hair_color}</td></tr>
+                                    <tr><td>Age</td><td>{item.age}</td></tr>
+                                    <tr><td>Weight</td><td>{item.weight}</td></tr>
+                                    <tr><td>Height</td><td>{item.height}</td></tr>
+                                </table>
+                                {/* <div className={classes.contentProfesionalInfo}> 
+                                    <p>Professions: {item.professions}</p>
+                                    <p>Friends: {item.friends}</p>
+                                </div> */}
+                                {/* <table>
+                                        <tr><td>Profesiones</td><td>{item.professions}</td></tr>
+                                        <tr><td>Amigos</td><td>{item.friends}</td></tr>
+                                </table> */}
+
+                            </section>
+                                <section className={classes.arrowContent}>
+                                    <FaArrowAltCircleLeft className={classes.arrow} onClick={prevSlide}/>
+                                    <FaArrowAltCircleRight className={classes.arrow} onClick={nextSlide}/>
+                                </section>
                             </div>
-                        ))
-                    }
-                </section>
+                        )}
+                    </div>
+                ))
+            }
             </div>
-        </div>
+        </section>
     )
 }
 

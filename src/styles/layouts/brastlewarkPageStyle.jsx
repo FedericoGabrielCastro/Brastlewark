@@ -40,34 +40,6 @@ export const useStyles = makeStyles(({
         lineHeight: "1.5em",
         margin: "20px 0"
     },
-    button: {},
-    sliderContent: {
-        position: "relative",
-        '& $slidesGnomes': {
-            color: "#fff"
-        }
-    },
-    slidesGnomes: {},
-    slide:{
-        opacity: "0",
-        transitionDuration: "1s ease"
-    },
-    slideActive:{
-        opacity: "1",
-        transitionDuration: "1s",
-        transform: "scale(1)"
-    },
-    // imgSlider: {},
-    footer: {
-        position: "absolute",
-        bottom: 0,
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        padding: "30px",
-        justifyItems: "center",
-        alignItems: "flex-end"
-    },
     prevNext: {
         position: "relative",
         userSelect: "none",
@@ -76,21 +48,10 @@ export const useStyles = makeStyles(({
     },
     prevNextTitle: {
         position: "relative",
-        color: "#fff",
-        textAlign: "end",
-        marginBottom: "10px", 
+        color: "#fff2",
+        letterSpacing: "10px"
     },
-    centerArrows: {
-        display: "flex",
-        justifyContent: "space-between"
-    },
-    arrow: {
-        width: "30px",
-        height: "30px",
-        color: "#fff",
-        cursor: "pointer",
-    },
-
+    button: {},
     // ### styles ###
 
     // ### animations ###

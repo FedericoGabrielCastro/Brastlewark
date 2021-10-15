@@ -1,11 +1,10 @@
 import {makeStyles} from '@material-ui/core'
 
 const linearGradientReflectBox = "below 1px linear-gradient(transparent, transparent, transparent, #0004)"
-const linearGradientBackground = "#444"
 
 export const useStyles = makeStyles(({
     // ### styles ###
-    card: {
+    sliderContent: {
         position: "relative",
         display: "flex",
         paddingBottom: "10px",
@@ -15,15 +14,13 @@ export const useStyles = makeStyles(({
             '&:hover': {
                 animationPlayState: 'running',
                 filter: "grayscale(0)",
+                '& $arrow': {
+                    opacity: "1",
+                    transitionDuration: "1s",
+                    transform: "scale(1)",
+                    color: "#000"
+                }
             },
-            '& $imageGnome': {
-                // height: "380px",
-            },
-            '& $titleCard': {
-                height: "400px",
-                color: "#ffffff",
-                fontSize: "150%"
-            }
         }
     },
     box: {
@@ -35,47 +32,29 @@ export const useStyles = makeStyles(({
         // animation: `$animateBgBox 1s linear infinite`,
         animationPlayState: "paused",
         transition: "filter 1s",
-        background: `${linearGradientBackground}`,
+        background: `#444`,
         backgroundSize: "10px 10px",
         alignItems: "center",
     },
-    contentInfoCard: {
+    contentInfoCard:{
+        color: "#fff",
+        position: "relative",
+        width: "100%",
         display: "flex",
         flexDirection: "column",
-        alignItems: "left",
+        alignItems: "center"
+    },
+    imageGnome:{
+        maxHeight: "200px",
+        maxWidth: "400px",
+        minHeight: "200px",
+        minWidth: "400px",
         margin: "10px",
+        borderRadius: "20px"
     },
-    slider: {
-        position: "relative",
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    leftArrow: {
-        position: "absolute", 
-        // top: "50%",
-        left: "-32px",
-        fontSize: "4rem",
-        color: "#444",
-        zIndex: "100",
-        cursor: "pointer",
-        userSelect: "none"
-    },
-    rightArrow: {
-        position: "absolute",
-        // top: "50%",
-        right: "-32px",
-        fontSize: "4rem",
-        color: "#444",
-        zIndex: "100",
-        cursor: "pointer",
-        userSelect: "none"
-    },
-    imageGnome: {
-        height: "200px",
-        borderRadius: "10px",
-        margin: "10px"
+    slidesGnomes: {
+        color: "#fff",
+        background: "red"
     },
     slide:{
         opacity: "0",
@@ -86,17 +65,28 @@ export const useStyles = makeStyles(({
         transitionDuration: "1s",
         transform: "scale(1)"
     },
-    titleName:{
-        color: "#fff",
-        textSize: "10px",
-        letterSpacing: "1px",
+    contentProfesionalInfo: {
+        display: "flex",
+        flexDirection: "column"
+    },
+    arrowContent:{
+        display: "flex",
+        justifyContent: "space-around",
+        marginBottom: "10px"
+    },
+    arrow: {
+        width: "50px",
+        height: "50px",
+        opacity: "0",
+        transitionDuration: "1s ease",
+        cursor: "pointer",
+    },
+    titleName: {
+        letterSpacing: "2px",
+        fontSize: "20px"
     },
     // ### styles ###
 
     // ### animations ###
-    "@keyframes animateBgBox": {
-        "0%": {backgroundPosition:0},
-        "100%": {backgroundPosition:"40px"}
-    }
     // ### animations ###
 }))
