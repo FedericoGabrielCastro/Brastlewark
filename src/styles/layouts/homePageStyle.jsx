@@ -10,12 +10,19 @@ export const useStyles = makeStyles(({
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
-        background: "#262626"
+        background: "#262626",
+        '@media (max-width: 992px)': {
+            display: "flex",
+            flexDirection: "column",
+        }
     },
     boxContainer: {
         position: "relative",
         display: "flex",
         WebkitBoxReflect: `${linearGradientReflectBox}`,
+        '@media (max-width: 992px)': {
+            paddingTop: "150px"
+        },
         '& $box': {
             '&:hover': {
                 animationPlayState: 'running',

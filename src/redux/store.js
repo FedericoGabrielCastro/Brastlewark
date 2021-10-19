@@ -9,12 +9,10 @@ const rootReducer = combineReducers ({
     fetchGnomesReducer: fetchGnomesReducer,
 })
 
-const middleware = [thunk]
-
 // Create store to use in App.jsx inside the Provider
 const store = createStore (
     rootReducer,
-    composeWithDevTools(applyMiddleware(logger, ...middleware)),
+    composeWithDevTools(applyMiddleware(logger,thunk)),
 )
 
 export default store

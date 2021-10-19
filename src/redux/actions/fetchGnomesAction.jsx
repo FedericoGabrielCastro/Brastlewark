@@ -9,8 +9,8 @@ const API_GNOMES = `https://raw.githubusercontent.com/rrafols/mobile_test/master
 
 export const fetchGnomes = () => async (dispatch) => {
 
+  const data = await axios.get(API_GNOMES)
   try {
-    const data = await axios.get(API_GNOMES)
     dispatch({
       type: GET_GNOMES,
       payload: data.data.Brastlewark    

@@ -13,6 +13,7 @@ const fetchGnomesReducer = (state = initialState, action) => {
                 ...state,
                 gnomes: action.payload,
             }
+            break
         default:
             return state
     }

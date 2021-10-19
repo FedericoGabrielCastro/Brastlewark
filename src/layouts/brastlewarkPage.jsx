@@ -1,7 +1,10 @@
 import React from 'react'
 import {useStyles} from '../styles/layouts/brastlewarkPageStyle'
 
+import {DESCRIPTION} from '../types/allTypes'
+
 import SliderAllGnomes from '../components/sliderAllGnomes'
+import Search from '../components/search'
 
 const BrastlewarkPage = () => {
     const classes = useStyles()
@@ -11,9 +14,9 @@ const BrastlewarkPage = () => {
             <main className={classes.main}>
                 <section className={classes.content}>
                     <div className={classes.titleTextContext}>
-                        <h2 className={classes.titlePage}> BRASTLEWARK</h2>
-                        <p className={classes.text}> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, quis. Magnam laborum quas ut ipsum facilis rem asperiores omnis culpa, architecto a deserunt perspiciatis rerum aspernatur fugiat modi repudiandae excepturi?</p>
-                        <button className={classes.button}> algo tiene que hacer</button>
+                        <h1 className={classes.titlePage}> BRASTLEWARK</h1>
+                        <Search/> 
+                        <p className={classes.text}> {DESCRIPTION}</p>
                     </div>
                     <section className={classes.prevNext}>
                         <h3 className={classes.prevNextTitle}> View all Gnomes</h3>

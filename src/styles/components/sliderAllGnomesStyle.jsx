@@ -18,9 +18,13 @@ export const useStyles = makeStyles(({
                     opacity: "1",
                     transitionDuration: "1s",
                     transform: "scale(1)",
-                    color: "#000"
-                }
-            },
+                    color: "#000",
+                },   
+            }
+        },
+        '@media (max-width: 992px)': {
+           paddingRight: "30px"
+           
         }
     },
     box: {
@@ -65,9 +69,16 @@ export const useStyles = makeStyles(({
         transitionDuration: "1s",
         transform: "scale(1)"
     },
-    contentProfesionalInfo: {
-        display: "flex",
-        flexDirection: "column"
+    table: {
+        maxWidth: "70%",
+        fontSize: "12px",
+        // letterSpacing: "1px",
+        // display: "flex",
+        // flexDirection: "column",
+        '& td': {
+            textAlign: "center",
+          
+        }
     },
     arrowContent:{
         display: "flex",
