@@ -4,9 +4,7 @@
 
 <p align="center"><img src="./readme_assets/home.gif" alt="enter home gif" /></p>
 
-<p align="center">
-    <h3> Orcs are not welcome </h3>
-</p>
+<p align="center"><h3> Orcs are not welcome </h3></p>
 
 ## 🛠️ Installation Steps
 
@@ -44,14 +42,10 @@ npm start
 
 ## 🙇 Without Internet ?
 
-<p align="center">
-    <h3> We can wait... </h3>
-</p>
+<p align="center"><h3> We can wait... </h3></p>
 
-<p align="center"><img src="./readme_assets/home.gif" alt="enter home gif" /></p>
+<p align="center"><img src="./readme_assets/wait.gif" alt="loading" /></p>
 
 
 <hr>
-<p align="center">
-    Don't ask the gender of the gnomes 
-</p>
+<p align="center">Don't ask the gender of the gnomes </p>
