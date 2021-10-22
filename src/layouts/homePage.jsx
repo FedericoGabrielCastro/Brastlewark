@@ -15,7 +15,7 @@ const HomePage = () => {
             <body className={classes.homePage}>
                     {secondRoutes.map((item) => {
                         return (
-                            <main className={classes.boxContainer}>
+                            <main key={item.index} className={classes.boxContainer}>
                                 <Link to={item.path}>
                                     <div className={classes.box}>
                                         <h1 className={classes.titleCard}>{item.title}</h1>

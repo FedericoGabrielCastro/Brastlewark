@@ -1,29 +1,44 @@
-import React from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import {useStyles} from '../styles/layouts/brastlewarkPageStyle'
-
+import {useSelector, useDispatch} from 'react-redux'
 import {DESCRIPTION} from '../types/allTypes'
 
-import SliderAllGnomes from '../components/sliderAllGnomes'
-import Search from '../components/search'
+import {saveSearchAction} from '../redux/actions/saveSearchDataAction'
+
+import ListGnomes from '../components/list'
+import OptionsSelect from '../components/optionsSelect'
 
 const BrastlewarkPage = () => {
     const classes = useStyles()
+    const dispatch = useDispatch()
+    
+    const search = useSelector(store => store.saveSearchReducer)
+
+    const hadleChange = useCallback(evento => {
+        dispatch(saveSearchAction(evento.target.value))
+        console.log("busqueda: " + evento.target.value )
+    }, [dispatch, saveSearchAction])
+
 
     return (
         <body className={classes.body}>
-            <main className={classes.main}>
-                <section className={classes.content}>
-                    <div className={classes.titleTextContext}>
-                        <h1 className={classes.titlePage}> BRASTLEWARK</h1>
-                        <Search/> 
-                        <p className={classes.text}> {DESCRIPTION}</p>
-                    </div>
-                    <section className={classes.prevNext}>
-                        <h3 className={classes.prevNextTitle}> View all Gnomes</h3>
-                        <SliderAllGnomes/>
-                    </section>
-                </section>
-            </main>
+            <section className={classes.titleSearch}>
+                <h1 className={classes.titlePage}> BRASTLEWARK</h1>
+                <form className={classes.searchContent}>
+                    <input className={classes.searchInput}
+                        type="text"
+                        placeholder= "Search ..."
+                        value={search}
+                        onChange={hadleChange}
+                    />
+                    <OptionsSelect/>
+                </form>
+            </section>
+            <section className={classes.contentMain}>
+                <p className={classes.text}> {DESCRIPTION}</p>
+                <h3 className={classes.viewALlGnomes}> View all Gnomes</h3>
+                <ListGnomes/>
+            </section>
         </body>
     )
 }

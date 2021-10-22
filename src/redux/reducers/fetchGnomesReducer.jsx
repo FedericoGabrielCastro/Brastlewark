@@ -1,8 +1,13 @@
-import { GET_GNOMES } from '../types/index'
+import { 
+    GET_GNOMES,
+    GET_GNOMES_ERROR,
+} from '../types/index'
 
 // Set initial state reducer
 const initialState = {
     gnomes: [],
+    error: null,
+    loading: true
 }
 
 const fetchGnomesReducer = (state = initialState, action) => {
@@ -11,9 +16,16 @@ const fetchGnomesReducer = (state = initialState, action) => {
         case GET_GNOMES:
             return {
                 ...state,
+                loading: false,
                 gnomes: action.payload,
+
             }
-            break
+        case GET_GNOMES_ERROR:
+            return {
+                ...state,
+                loading: true,
+                error: action.payload
+            }
         default:
             return state
     }
