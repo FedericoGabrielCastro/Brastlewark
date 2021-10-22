@@ -1,9 +1,16 @@
+// ## startsWith - endsWith - includes  
+//      These functions, when filtering the data that comes from getAllGnomes, 
+//      analyze if the word to search begins, has, or ends with the letter searched for by the user.
+// ##  sort compares names based on what the user selects in options (optionSelect.jsx) to return the list in order
+// ## slice makes some cuts in the amount of elements brought by getAllGnomes
+// ## if loading is true, the app will show the filtered list of gnomes but if it still couldn't make 
+//      the request, the Loading component (loading.jsx) will be the one to show.
+
 import React, {useEffect} from 'react'
 import {useStyles} from '../styles/components/listStyle'
 import {useSelector, useDispatch} from 'react-redux'
 
 import {fetchGnomesAction} from '../redux/actions/fetchGnomesAction'
-import {currentSlideAction} from '../redux/actions/currentPageSlideActions'
 
 import Loading from './loading'
 
@@ -11,11 +18,11 @@ const ListGnomes = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
     
-    const getAllGnomes = useSelector(store => store.fetchGnomesReducer.gnomes)
-    const loading = useSelector(store => store.fetchGnomesReducer.loading)
-    const search = useSelector(store => store.saveSearchReducer)
-    const current = useSelector(store => store.currentSlideReducers)
-    const sort  = useSelector(store => store.orderGnomesReducers)
+    const getAllGnomes = useSelector(store => store.fetchGnomesReducer.gnomes) // fetch data 
+    const loading = useSelector(store => store.fetchGnomesReducer.loading) // loading state  
+    const search = useSelector(store => store.saveSearchReducer) // search user detected
+    const current = useSelector(store => store.currentSlideReducers) // current page (slice)
+    const sort  = useSelector(store => store.orderGnomesReducers) // compare and order data 
 
     useEffect(() => {
         dispatch(fetchGnomesAction())

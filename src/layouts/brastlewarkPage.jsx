@@ -1,4 +1,6 @@
-import React, {useState, useEffect, useCallback} from 'react'
+// ## handleChange works to capture what is written by the user in the input search to be used later
+
+import React, {useCallback} from 'react'
 import {useStyles} from '../styles/layouts/brastlewarkPageStyle'
 import {useSelector, useDispatch} from 'react-redux'
 import {DESCRIPTION} from '../types/allTypes'

@@ -4,7 +4,7 @@
 
 <p align="center"><img src="./readme_assets/home.gif" alt="enter home gif" /></p>
 
-<p align="center"><h3> Orcs are not welcome </h3></p>
+<p align="center"><p> Orcs are not welcome </p></p>
 
 ## 🛠️ Installation Steps
 
@@ -37,12 +37,10 @@ npm start
 ## 💻 Find the gnomes 
 
 <p align="center"><img src="./readme_assets/search.gif" alt="search gnomes" /></p>
-## 🧐 Features
-
 
 ## 🙇 Without Internet ?
 
-<p align="center"><h3> We can wait... </h3></p>
+<p align="center"><p> We can wait... </p></p>
 
 <p align="center"><img src="./readme_assets/wait.gif" alt="loading" /></p>
 
