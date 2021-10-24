@@ -9,6 +9,7 @@ import {saveSearchAction} from '../redux/actions/saveSearchDataAction'
 
 import ListGnomes from '../components/list'
 import OptionsSelect from '../components/optionsSelect'
+import Pagination from '../components/pagination'
 
 const BrastlewarkPage = () => {
     const classes = useStyles()
@@ -39,7 +40,9 @@ const BrastlewarkPage = () => {
             <section className={classes.contentMain}>
                 <p className={classes.text}> {DESCRIPTION}</p>
                 <h3 className={classes.viewALlGnomes}> View all Gnomes</h3>
+                <Pagination/>
                 <ListGnomes/>
+                <Pagination/>
             </section>
         </body>
     )

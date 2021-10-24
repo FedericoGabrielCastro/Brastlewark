@@ -24,10 +24,9 @@ const OptionsSelect = () => {
     const classes = useStyles()
 
     const dispatch = useDispatch()
-    const orderFor = useSelector(store => store.orderGnomesReducers)
-
+    
     const handleSelect = useCallback((event) => {
-            const opt = event.target.value
+        const opt = event.target.value
         for (let index = 0; index < optionsSelec.length; index++) {
             
                 const element = optionsSelec[index];

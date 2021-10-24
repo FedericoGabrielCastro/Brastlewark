@@ -42,7 +42,7 @@ export const useStyles = makeStyles(({
     contentMain: {
         display: "flex",
         flexDirection: "column",
-        alignItems: "center"
+        alignItems: "center",
     },
     text: {
         color: "#fff",
@@ -58,8 +58,9 @@ export const useStyles = makeStyles(({
         }
     },
     viewALlGnomes: {
-        color: "#fff2",
-        letterSpacing: "10px"
+        color: "#fff5",
+        letterSpacing: "10px",
+        paddingBottom: "10px"
     },
     // ### styles ###
 

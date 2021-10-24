@@ -10,6 +10,10 @@ import React, {useEffect} from 'react'
 import {useStyles} from '../styles/components/listStyle'
 import {useSelector, useDispatch} from 'react-redux'
 
+import {DiMagento} from 'react-icons/di'
+import {GiHairStrands, GiBodyHeight} from 'react-icons/gi'
+import {FaWeightHanging} from 'react-icons/fa'
+
 import {fetchGnomesAction} from '../redux/actions/fetchGnomesAction'
 
 import Loading from './loading'
@@ -43,17 +47,39 @@ const ListGnomes = () => {
                             return x[sort] - y[sort] // Order results for name 
                         }).slice(current.iniinitialCurrent, current.finishCurrent).map((item, index) => {
                             return (
-                                <section key={index} className={classes.contentInfoCard}>
-                                    <img src={item.thumbnail} alt={item.name} className={classes.imageGnome}/>
-                                    <h1 className={classes.titleName}>{item.name}</h1>
-                                    {/* <table className={classes.table}>
-                                        <tr><td>Hair: </td><td>{item.hair_color}</td></tr>
-                                        <tr><td>Age: </td><td>{item.age}</td></tr>
-                                        <tr><td>Weight: </td><td>{item.weight}</td></tr>
-                                        <tr><td>Height: </td><td>{item.height}</td></tr>
-                                        <tr><td>Friends: </td><td>{item.friends}</td></tr>
-                                        <tr><td>Professions: </td><td>{item.professions}</td></tr>
-                                    </table> */}
+                                <section key={index} className={classes.contentCard}>
+                                    <div className={classes.hexagon}>
+                                        <div className={classes.shape}>
+                                            <img src={item.thumbnail} alt={item.name} className={classes.imageGnome}/>
+                                            <div className={classes.contentInfo}>
+                                                <h1 className={classes.titleName}>{item.name}</h1>
+                                                <p>
+                                                {
+                                                    item.professions.map((professions, index) => {
+                                                        return (
+                                                            <p key={index}>{professions}</p>
+                                                        )
+                                                    })
+                                                }
+                                                </p>
+                                                <p>
+                                                {
+                                                    item.friends.map((friends, index) => {
+                                                        return (
+                                                            <p key={index}>{friends}</p>
+                                                        )
+                                                    })
+                                                }
+                                                </p> 
+                                                <div className={classes.table}>
+                                                    <span><GiHairStrands/>{item.hair_color}</span>
+                                                    <span><DiMagento/>{item.age}</span>
+                                                    <span><FaWeightHanging/> {item.weight}</span>
+                                                    <span><GiBodyHeight/>{item.height}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </section>
                             )
                         }) 
