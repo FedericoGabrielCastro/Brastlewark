@@ -17,6 +17,9 @@ export const useStyles = makeStyles(({
         textTransform: "uppercase",
         animation: `$typing 5s steps(100) infinite`, 
         overflow: "hidden",
+        '@media (max-width: 992px)': {
+            fontSize: "1.5em",
+        },
         },
     // ### styles ###
 

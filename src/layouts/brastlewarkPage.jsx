@@ -42,7 +42,6 @@ const BrastlewarkPage = () => {
                 <h3 className={classes.viewALlGnomes}> View all Gnomes</h3>
                 <Pagination/>
                 <ListGnomes/>
-                <Pagination/>
             </section>
         </body>
     )

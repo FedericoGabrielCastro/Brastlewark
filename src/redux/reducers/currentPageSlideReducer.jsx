@@ -1,4 +1,4 @@
-import {CURRENT_NUMBER} from '../types/index'
+import {CURRENT_NUMBER_SLIDE} from '../types/index'
 
 const initialState = {
     initialCurrent: 0,
@@ -8,10 +8,11 @@ const initialState = {
 export const currentSlideReducers = (state = initialState, action) => {
     switch (action.type) {
 
-    case CURRENT_NUMBER:
+    case CURRENT_NUMBER_SLIDE:
         return { 
+            ...state,
             initialCurrent: action.initialCurrent ,
-            finishCurrent: action.finishCurrent
+            finishCurrent: action.finishCurrent,   
         }
     default:
         return state

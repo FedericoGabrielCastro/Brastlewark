@@ -6,8 +6,8 @@ export const useStyles = makeStyles(({
         margin: 0,
         padding: 0,
         background: "#262626",
-        minHeight: "100vh",
         display: "flex",
+        height: "100%",
         flexDirection: "column",
     },
     titleSearch: {
@@ -21,8 +21,9 @@ export const useStyles = makeStyles(({
         letterSpacing: "4px",
         fontWeight: 500,
         '@media (max-width: 992px)': {
-            fontWeight: 300,
-            fontSize: "40px",
+            fontWeight: "300",
+            fontSize: "30px",
+            textAlign: "center"
         }
     },
     searchContent: {
@@ -43,6 +44,9 @@ export const useStyles = makeStyles(({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        '@media (max-width: 992px)': {
+            padding: "15%"
+        }
     },
     text: {
         color: "#fff",
@@ -54,13 +58,13 @@ export const useStyles = makeStyles(({
         '@media (max-width: 992px)': {
             fontSize: "1em",
             lineHeight: "1em",
-            paddingRight: "10px"
         }
     },
     viewALlGnomes: {
         color: "#fff5",
         letterSpacing: "10px",
-        paddingBottom: "10px"
+        paddingBottom: "10px",
+        textAlign: "center"
     },
     // ### styles ###
 

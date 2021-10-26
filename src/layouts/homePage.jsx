@@ -9,10 +9,10 @@ const HomePage = () => {
     
     return (
         <section>
-            <header className={classes.titlePageContent}>
+            <div className={classes.titlePageContent}>
                 <h1 className={classes.titlePage}> What city do you want to visit hero ... </h1>
-            </header>
-            <body className={classes.homePage}>
+            </div>
+            <section className={classes.homePage}>
                     {secondRoutes.map((item) => {
                         return (
                             <main key={item.index} className={classes.boxContainer}>
@@ -25,7 +25,7 @@ const HomePage = () => {
                             </main>
                         )
                     })}
-            </body>
+            </section>
         </section>
     )
 }

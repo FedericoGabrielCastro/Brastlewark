@@ -5,7 +5,6 @@
 // ## slice makes some cuts in the amount of elements brought by getAllGnomes
 // ## if loading is true, the app will show the filtered list of gnomes but if it still couldn't make 
 //      the request, the Loading component (loading.jsx) will be the one to show.
-
 import React, {useEffect} from 'react'
 import {useStyles} from '../styles/components/listStyle'
 import {useSelector, useDispatch} from 'react-redux'
@@ -32,6 +31,7 @@ const ListGnomes = () => {
         dispatch(fetchGnomesAction())
     }, [dispatch, fetchGnomesAction])
 
+
     return (
         <main className={classes.grid}>
                     {
@@ -52,8 +52,9 @@ const ListGnomes = () => {
                                         <div className={classes.shape}>
                                             <img src={item.thumbnail} alt={item.name} className={classes.imageGnome}/>
                                             <div className={classes.contentInfo}>
-                                                <h1 className={classes.titleName}>{item.name}</h1>
-                                                <p>
+                                                <h1 className={classes.titleName}>{item.name}</h1>    
+                                                <h7 key={index} className={item.professions.length === 0 ? (classes.disable) : (classes.active)}> Professions </h7>
+                                                <div className={classes.alingInfo}>
                                                 {
                                                     item.professions.map((professions, index) => {
                                                         return (
@@ -61,8 +62,9 @@ const ListGnomes = () => {
                                                         )
                                                     })
                                                 }
-                                                </p>
-                                                <p>
+                                                </div>
+                                                <h7 key={index} className={item.friends.length === 0 ? (classes.disable) : (classes.active)}> Friends </h7>
+                                                <div className={classes.alingInfo}>
                                                 {
                                                     item.friends.map((friends, index) => {
                                                         return (
@@ -70,12 +72,12 @@ const ListGnomes = () => {
                                                         )
                                                     })
                                                 }
-                                                </p> 
+                                                </div> 
                                                 <div className={classes.table}>
-                                                    <span><GiHairStrands/>{item.hair_color}</span>
-                                                    <span><DiMagento/>{item.age}</span>
-                                                    <span><FaWeightHanging/> {item.weight}</span>
-                                                    <span><GiBodyHeight/>{item.height}</span>
+                                                    <span><FaWeightHanging/> Weight: {item.weight}</span>
+                                                    <span><GiBodyHeight/> Height: {item.height}</span>
+                                                    <span><GiHairStrands/> Hair: {item.hair_color}</span>
+                                                    <span><DiMagento/> Age: {item.age}</span>
                                                 </div>
                                             </div>
                                         </div>

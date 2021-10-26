@@ -2,9 +2,8 @@
 //      within the select a callback is triggered that reads all the content of optionsSelect, 
 //      it is fixed that the one selected by the user is equal to the element of the list, 
 //      and triggers its action, this affects the order in which the elements of getAllGnomes is displayed
-
 import React, {useCallback} from 'react'
-import {useSelector,useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {useStyles} from '../styles/components/optionsSelectStyle'
 
 import {

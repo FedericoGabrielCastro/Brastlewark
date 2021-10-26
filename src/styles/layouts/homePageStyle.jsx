@@ -21,7 +21,8 @@ export const useStyles = makeStyles(({
         display: "flex",
         WebkitBoxReflect: `${linearGradientReflectBox}`,
         '@media (max-width: 992px)': {
-            paddingTop: "150px"
+            paddingTop: "150px",
+            marginBottom: "150px"
         },
         '& $box': {
             '&:hover': {
@@ -52,6 +53,9 @@ export const useStyles = makeStyles(({
         transition: "filter 1s",
         background: `${linearGradientBackground}`,
         backgroundSize: "10px 10px",
+        '@media (max-width: 992px)': {
+            paddingTop: "150px"
+        },
     },
     imageBoxCastle: {
         position: "absolute",
@@ -71,6 +75,12 @@ export const useStyles = makeStyles(({
         display: "flex",
         position: "absolute",
         justifyContent: "center",
+        textAling: "center",
+        // padding: "20px",
+        '@media (max-width: 992px)': {
+            textAling: "center",
+            padding: "20px"
+        },
     },
     titlePage: {
         color: "#fff",

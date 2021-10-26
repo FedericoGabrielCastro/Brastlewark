@@ -8,6 +8,9 @@ export const useStyles = makeStyles(({
         display: "grid",
         gridAutoRows: "minmax(100px auto)",
         gridTemplateColumns: "1fr 1fr 1fr",
+        '@media (max-width: 992px)': {
+            gridTemplateColumns: "1fr"
+        },
     },
     contentCard:{  // container
         position: "relative",
@@ -46,6 +49,10 @@ export const useStyles = makeStyles(({
         width: "350px",
         height: "400px",
         margin: "10px 20px 70px",
+        '@media (max-width: 992px)': {
+            width: "300px",
+            height: "400px",
+        },
     },
     shape: {
         position: "absolute",
@@ -74,9 +81,12 @@ export const useStyles = makeStyles(({
         transition: ".5s",
         '& p': {
             textAlign: "center",
-            overflow: "hidden",
-            // whiteSpace: "nowrap",
-            width: "80%"
+            // textOverflow: "hidden",
+            overflow: "visible",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            fontSize: "10px"
         }
     },
     imageGnome:{
@@ -89,19 +99,31 @@ export const useStyles = makeStyles(({
         opacity: 0.4
     },
     table: {
-        fontSize: "16px",
-        textAlign: "center",
-        display: "flex",
-        
+        display: "grid",
+        gap: "10px",        
         '& span': {
-            paddingRight: "20px"
+            textAlign: "center",
+            fontSize: "15px",
         }
     },
     titleName: {
         fontSize: "20px",
-        color: "#fff",
+        color: "#337",
         textAlign: "center",
         textTransform: "uppercase",
+        letterSpacing: "3px"
     },
+    alingInfo: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr 1fr",
+    },
+    disable: {
+        display: "none"
+    },
+    active: {
+        color: "#fff",
+        textTransform: "uppercase",
+        letterSpacing: "7px",
+    }
     // ### styles ###
 }))

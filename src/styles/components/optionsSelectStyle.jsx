@@ -8,6 +8,9 @@ export const useStyles = makeStyles(({
         marginTop: "10px",
         width: "50%",
         overflowY: "scroll",
+        '@media (max-width: 992px)': {
+            gridTemplateColumns: "1fr"
+        },
     },
     // ### styles ###
 }))
