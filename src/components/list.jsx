@@ -14,6 +14,8 @@ import {GiHairStrands, GiBodyHeight} from 'react-icons/gi'
 import {FaWeightHanging} from 'react-icons/fa'
 
 import {fetchGnomesAction} from '../redux/actions/fetchGnomesAction'
+import {currentAction} from '../redux/actions/currentPageSlideActions'
+import { pageSelectAction} from '../redux/actions/pageSelectedAction'
 
 import Loading from './loading'
 
@@ -24,13 +26,13 @@ const ListGnomes = () => {
     const getAllGnomes = useSelector(store => store.fetchGnomesReducer.gnomes) // fetch data 
     const loading = useSelector(store => store.fetchGnomesReducer.loading) // loading state  
     const search = useSelector(store => store.saveSearchReducer) // search user detected
-    const current = useSelector(store => store.currentSlideReducers) // current page (slice)
+    const initialCurrent = useSelector(store => store.currentSlideReducers.initialCurrent) // current page (slice)
+    const finishCurrent = useSelector(store => store.currentSlideReducers.finishCurrent) // current page (slice)
     const sort  = useSelector(store => store.orderGnomesReducers) // compare and order data 
-
+    
     useEffect(() => {
         dispatch(fetchGnomesAction())
     }, [dispatch, fetchGnomesAction])
-
 
     return (
         <main className={classes.grid}>
@@ -45,7 +47,7 @@ const ListGnomes = () => {
                             }
                         }).sort((x,y) => {
                             return x[sort] - y[sort] // Order results for name 
-                        }).slice(current.iniinitialCurrent, current.finishCurrent).map((item, index) => {
+                        }).slice(initialCurrent, finishCurrent).map((item, index) => {
                             return (
                                 <section key={index} className={classes.contentCard}>
                                     <div className={classes.hexagon}>

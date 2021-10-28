@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {useStyles} from '../styles/layouts/homePageStyle'
 
@@ -6,6 +6,10 @@ import {secondRoutes} from '../routes/routes'
 
 const HomePage = () => {
     const classes = useStyles()
+
+    useEffect(() => {
+        document.title = `Chose city`
+    }, [])
     
     return (
         <section>

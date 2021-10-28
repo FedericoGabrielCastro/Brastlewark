@@ -16,7 +16,7 @@ import {
 const optionsSelec =  [
     {title: 'Name', value: "name",action: orderGnomesNameAction},
     {title: 'Age', value: "age", action: orderGnomesAgeAction},
-    {title: 'Hair', value: "hair",action: orderGnomesHairAction},
+    {title: 'Weight', value: "weight",action: orderGnomesHairAction},
 ]
 
 const OptionsSelect = () => {

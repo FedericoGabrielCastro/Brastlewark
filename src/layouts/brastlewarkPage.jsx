@@ -1,6 +1,6 @@
 // ## handleChange works to capture what is written by the user in the input search to be used later
 
-import React, {useCallback} from 'react'
+import React, {useCallback, useEffect} from 'react'
 import {useStyles} from '../styles/layouts/brastlewarkPageStyle'
 import {useSelector, useDispatch} from 'react-redux'
 import {DESCRIPTION} from '../types/allTypes'
@@ -14,6 +14,10 @@ import Pagination from '../components/pagination'
 const BrastlewarkPage = () => {
     const classes = useStyles()
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        document.title = `Brastlewark`
+    }, [])
     
     const search = useSelector(store => store.saveSearchReducer)
 
@@ -21,7 +25,6 @@ const BrastlewarkPage = () => {
         dispatch(saveSearchAction(evento.target.value))
         console.log("busqueda: " + evento.target.value )
     }, [dispatch, saveSearchAction])
-
 
     return (
         <body className={classes.body}>

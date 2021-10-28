@@ -14,7 +14,6 @@ export const pageSelectReducer = (state = initialState, action) => {
     case PAGE_SELECTED:
         return { 
             currentPage: action.currentPage, 
-            
         }
     case NEXT_PAGE:
         return { 

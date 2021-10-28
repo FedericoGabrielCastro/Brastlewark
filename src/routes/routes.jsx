@@ -1,5 +1,6 @@
 import HomePage from '../layouts/homePage'
 import BrastlewarkPage from '../layouts/brastlewarkPage'
+import OrcCity from '../layouts/orcCity'
 
 import gnome from '../assets/gnome.png' 
 import orc from '../assets/orc.png' 
@@ -15,6 +16,11 @@ export const routes = [
         title: 'brastlewarkPage',
         path: '/brastlewark',
         component: BrastlewarkPage
+    },
+    {
+        title: 'brastlewarkPage',
+        path: '/orcCity',
+        component: OrcCity
     }
 ]
 
@@ -22,9 +28,9 @@ export const routes = [
 export const secondRoutes =  [
     {
         title: 'Ogrimar',
-        path: '',
-        component: '',
-        image: orc
+        path: '/orcCity',
+        component: OrcCity,
+        image: orc,
     },
     {
         title: 'BrastlewarkPage',
@@ -34,8 +40,8 @@ export const secondRoutes =  [
     },
     {
         title: 'Durotar',
-        path: '',
-        component: '',
+        path: '/orcCity',
+        component: OrcCity,
         image: orc
     }
 ]

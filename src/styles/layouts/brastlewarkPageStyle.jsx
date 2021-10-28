@@ -9,6 +9,7 @@ export const useStyles = makeStyles(({
         display: "flex",
         height: "100%",
         flexDirection: "column",
+        
     },
     titleSearch: {
         display: "flex",
@@ -67,7 +68,4 @@ export const useStyles = makeStyles(({
         textAlign: "center"
     },
     // ### styles ###
-
-    // ### animations ###
-    // ### animations ###
 }))

@@ -9,12 +9,16 @@ export const pageSelectAction = (currentPage) => ({
     currentPage,
 })
 
-export const nextPageAction = (currentPage) => ({
+export const nextPageAction = (currentPage, initialCurrent, finishCurrent) => ({
     type: NEXT_PAGE,
     currentPage,
+    initialCurrent,
+    finishCurrent
 })
 
-export const prevPageAction = (currentPage) => ({
+export const prevPageAction = (currentPage, initialCurrent, finishCurrent) => ({
     type: PREV_PAGE,
     currentPage,
+    initialCurrent,
+    finishCurrent
 })

@@ -14,7 +14,7 @@ export const orderGnomesReducers = (state = initialState, action) => {
         case ORDER_GNOMES_FOR_AGE:
             return "age"
         case ORDER_GNOMES_FOR_HAIR:
-            return "hair"
+            return "weight"
         default:
             return state
     }

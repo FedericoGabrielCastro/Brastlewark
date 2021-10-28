@@ -20,7 +20,7 @@ export const useStyles = makeStyles(({
         '@media (max-width: 992px)': {
             fontSize: "1.5em",
         },
-        },
+    },
     // ### styles ###
 
     // ### animations ###

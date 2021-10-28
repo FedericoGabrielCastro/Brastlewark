@@ -6,7 +6,7 @@ export const GET_GNOMES_ERROR = 'GET_GNOMES_ERROR'
 export const SET_SEARCH = 'SET_SEARCH'
 
 // ## Current slide Page number 
-export const CURRENT_NUMBER_SLIDE = 'CURRENT_NUMBER'
+export const CURRENT_NUMBER_SLIDE = 'CURRENT_NUMBER_SLIDE'
 
 // ## Pagination 
 export const SET_MAX_PAGE_NUMBER = 'SET_MAX_PAGE_NUMBER'

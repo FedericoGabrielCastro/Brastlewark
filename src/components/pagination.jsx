@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react'
+import React, {useEffect, useCallback} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {useStyles} from '../styles/components/paginationStyle'
 
@@ -18,7 +18,7 @@ const Pagination = () => {
     const maxPageNumberLimit = useSelector(state => state.paginationReducer.maxPageNumberLimit) // change pagination number - max
     const minPageNumberLimit = useSelector(state => state.paginationReducer.minPageNumberLimit) // change pagination number - min
     const currentPage = useSelector(state => state.pageSelectReducer.currentPage) // Show the page current
-   
+
     // ### This creates a list of pages that are calculated and rounded (Math.ciel) 
     // by dividing the number of items in 'getAllGnomes' by the items that can be created per page (itemPerPage)
     const pages = []
@@ -30,6 +30,7 @@ const Pagination = () => {
     const handleCLickPage = useCallback((evento) =>  {
         const selectPage = Number(evento.target.id)
         dispatch(pageSelectAction(selectPage))
+        console.log(selectPage)
     }, [])
 
     // Click next page or &hellip to change page + 1
@@ -50,7 +51,6 @@ const Pagination = () => {
             dispatch(setMinPageAction())
         }
     }
-
 
     // Create a '...' if there are more page to show
     let pageIncrementBtn = null
