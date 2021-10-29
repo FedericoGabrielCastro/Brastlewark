@@ -3,6 +3,7 @@
 </h1>
 
 <p align="center"><img src="./readme_assets/home.gif" alt="enter home gif" /></p>
+<p align="center"><img src="./readme_assets/pagination.png" alt="Enjoy" /></p>
 
 <p align="center"><p> Orcs are not welcome </p></p>
 
@@ -44,6 +45,10 @@ npm start
 
 <p align="center"><img src="./readme_assets/wait.gif" alt="loading" /></p>
 
+## 💻 Need Test ? 
+
+<p align="center"><img src="./readme_assets/test.png" alt="test" /></p>
 
 <hr>
 <p align="center">Don't ask the gender of the gnomes </p>
+

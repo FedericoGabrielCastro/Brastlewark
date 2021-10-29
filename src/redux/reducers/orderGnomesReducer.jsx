@@ -4,7 +4,7 @@ import {
     ORDER_GNOMES_FOR_HAIR
 } from '../types/index'
 
-const initialState = "name"
+export const initialState = "name"
 
 export const orderGnomesReducers = (state = initialState, action) => {
     

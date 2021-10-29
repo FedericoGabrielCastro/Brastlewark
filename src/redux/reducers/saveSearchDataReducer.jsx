@@ -1,6 +1,6 @@
 import {SET_SEARCH} from '../types/index'
 
-const initialState = ""
+export const initialState = ""
 
 export const saveSearchReducer = (state = initialState, action) => {
     switch (action.type) {

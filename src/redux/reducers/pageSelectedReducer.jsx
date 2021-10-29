@@ -4,7 +4,7 @@ import {
     PREV_PAGE
 } from '../types/index'
 
-const initialState = {
+export const initialState = {
     currentPage: 1
 }
 

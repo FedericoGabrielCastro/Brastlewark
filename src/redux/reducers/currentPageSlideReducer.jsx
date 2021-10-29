@@ -4,7 +4,7 @@ import {
     PREV_PAGE
 } from '../types/index'
 
-const initialState = {
+export const initialState = {
     initialCurrent: 0,
     finishCurrent: 30,
 }
@@ -14,7 +14,6 @@ export const currentSlideReducers = (state = initialState, action) => {
 
     case CURRENT_NUMBER_SLIDE:
         return { 
-            
             initialCurrent: state.initialCurrent ,
             finishCurrent: state.finishCurrent,
         }

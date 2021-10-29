@@ -3,6 +3,8 @@ import mockAxios from 'axios'
 import createMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk';
 
+import { GET_GNOMES, GET_GNOMES_ERROR } from '../../types';
+
 const mockStore = createMockStore([thunk])
 
 describe('axios test', () => {
@@ -16,7 +18,7 @@ describe('axios test', () => {
 
         const actions = store.getActions()
         const expectedActions = [{
-            type: 'GET_GNOMES'
+            type: GET_GNOMES
         }]
         expect(actions).toEqual(expectedActions)
     });
@@ -29,9 +31,8 @@ describe('axios test', () => {
             await store.dispatch(fetchGnomesAction())
             const actions = store.getActions()
             const expectedActions = [{
-                type: 'GET_GNOMES_ERROR'
+                type: GET_GNOMES_ERROR
             }]
             expect(actions).toEqual(expectedActions)
     })
-    
 });

@@ -3,7 +3,7 @@ import {
     SET_MIN_PAGE_NUMBER
 } from '../types/index'
 
-const initialState = {
+export const initialState = {
     pageNumberLimit: 5,
     itemsPerPage: 30,
     maxPageNumberLimit: 5,

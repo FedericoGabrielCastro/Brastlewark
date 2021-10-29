@@ -4,7 +4,7 @@ import {
 } from '../types/index'
 
 // Set initial state reducer
-const initialState = {
+export const initialState = {
     gnomes: [],
     error: null,
     loading: true
